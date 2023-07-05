@@ -1,24 +1,20 @@
-
-
-
-// to work dynamically everytime
-
+//Manav kumar 200534756
+// this makes our function work eery time the website is loaded
 document.addEventListener("DOMContentLoaded", function () {
-    
-let imgage = document.querySelector("figure img");
-let figures = document.querySelectorAll("ul li img");
-
-// loop to get each image
-
-figures.forEach(function(figure){
-    // function to get imwge when clicked
-
-figure.addEventListener("click", function(){
-    let thumbnail = figure.getAttribute("src");
-    
-
-
-    imgage.setAttribute("src", thumbnail);
-});
-});
-});
+    // Get references to the large image and thumbnail images
+    let largeImage = document.querySelector("figure img");
+    let thumbnails = document.querySelectorAll("ul li img");
+  
+    // Loop through each thumbnail image
+    thumbnails.forEach(function (thumbnail) {
+      // Add a click event listener to each thumbnail
+      thumbnail.addEventListener("click", function () {
+        // Get the URL of the clicked thumbnail
+        let thumbnailSrc = thumbnail.getAttribute("src");
+  
+        // Update the source of the large image with the clicked thumbnail's URL
+        largeImage.setAttribute("src", thumbnailSrc);
+      });
+    });
+  });
+  
